@@ -18,14 +18,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class AirQualityControllerTest {
 
     // MVC 테스트를 위한 가짜객체 생성
-    @Autowired
-    private MockMvc mvc;
+    @Autowired private MockMvc mockMvc;
 
     // 올바른 JSON 형태의 데이터인지 확인하기 위해
     // ObjectMapper 객체 선언
     private final ObjectMapper mapper = new ObjectMapper();
-    @Autowired
-    private MockMvc mockMvc;
 
     @Test
     @DisplayName("testAirQualityController")
