@@ -1,20 +1,21 @@
 package com.example.zzyzzy.airquality.service;
 
+import org.springframework.stereotype.Service;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+@Service
 public class AirQualityService {
 
     // data.go.kr로 부터 미세먼지 정보를 가져옴
     public String getAirQualityDataBasic() throws IOException {
         StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty"); /*URL*/
-        urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=1nHnnvHdTlHJn9IB55OEVZsW8tvqkALFXNRBo9nGXjODXETiIA9SjoOZAyLAE3OyADFq%2BmhF36yldlCJppS2A%3D%3D"); /*Service Key*/
+        urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=O1nHnnvHdTlHJn9IB55OEVZsW8tvqkALFXNRBo9nGXjODXETiIA9SjoOZAyLAE3OyADFq%2BmhF36yldlCJppS2A%3D%3D"); /*Service Key*/
         urlBuilder.append("&" + URLEncoder.encode("returnType","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /*xml 또는 json*/
         urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("100", "UTF-8")); /*한 페이지 결과 수*/
         urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
